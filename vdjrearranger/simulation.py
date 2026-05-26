@@ -42,7 +42,7 @@ class Simulator:
             primers_tsv: str | None = None,
     ):
         """
-        Initializes the simulation environment and mathematical distributions.
+        Initialises the simulation environment and mathematical distributions.
 
         :param clonotypes: list[Clonotype], List of Clonotype instances to be sampled.
         :param chemistry: str, Profile dictating barcode, UMI, and read lengths.
@@ -96,7 +96,7 @@ class Simulator:
 
     def _load_primers(self, tsv_path: str | None) -> dict[str, str]:
         """
-        Loads inner sequence primers from a custom TSV or the bundled package data.
+        Loads inner sequence primers (reverse complements) from a custom TSV or the bundled package data.
 
         :param tsv_path: str | None, Optional path to a custom TSV file.
         :return: A dictionary mapping chain IDs to their constant region primer sequences.
@@ -190,7 +190,7 @@ class Simulator:
         :param seq_len: int, Length of the target nucleotide sequence.
         :param read_len: int, Length of the sequence read (tile size).
         :param jitter: int, Random offset to apply to the starting positions to vary coverage.
-        :return: A list of unique integer starting indices.
+        :return: list of unique integer starting indices.
         """
         max_start = seq_len - read_len
         if max_start <= 0:
@@ -286,7 +286,7 @@ class Simulator:
             start_idx: int | None = None
     ) -> dict:
         """
-        Utility method to finalize read simulation and package it into a dictionary format.
+        Utility method to finalise read simulation and package it into a dictionary format.
 
         :param read_counter: count, Global iterator generating sequential integer read IDs.
         :param barcode: str, The cell barcode string.

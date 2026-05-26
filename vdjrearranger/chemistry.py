@@ -8,10 +8,10 @@ class Chemistry:
 
     :param name: Identifier for the chemistry type (e.g., 'SC5P-R2').
     :param barcode_length: Expected length of the cell barcode in nucleotides.
-    :param umi_length: Expected length of the Unique Molecular Identifier.
+    :param umi_length: Expected length of the UMI.
     :param r1_tail: Optional static sequence appended to Read 1.
     :param r1_length: Total simulated length of Read 1.
-    :param r2_length: Total simulated length of Read 2 (the transcript).
+    :param r2_length: Total simulated length of Read 2.
     """
     name: str
     barcode_length: int

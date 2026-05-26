@@ -10,7 +10,7 @@ class FastqWriter:
 
     def __init__(self, outdir: Path, sample_name: str, lane: int):
         """
-        Initializes output file streams.
+        Initialises output file streams.
 
         :param outdir: str, directory path where the FASTQ files will be created.
         :param sample_name: str, prefix used for the FASTQ filenames.

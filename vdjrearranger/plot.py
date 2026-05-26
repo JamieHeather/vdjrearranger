@@ -6,8 +6,8 @@ import numpy as np
 
 def generate_knee_plot(truth_tsv_path: Path, outdir: Path) -> Path:
     """
-    Generates a log-log Barcode Rank vs UMI Count plot (knee plot) to visually
-    assess the simulated separation between real cells and ambient background noise.
+    Generates a log-log Barcode Rank vs UMI Count plot (knee plot) to visually assess the simulated separation
+    between real cells and ambient background noise (analagous to the cellranger web summary plot).
 
     :param truth_tsv_path: str, path to the generated truth reads summary TSV (or TSV.gz).
     :param outdir: str, output directory where the resulting plot PNG will be saved.

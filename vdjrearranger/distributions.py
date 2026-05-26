@@ -3,7 +3,7 @@ import numpy as np
 
 class CountSampler:
     """
-    Provides a standardized interface for sampling counts from various statistical distributions.
+    Provides a standardised interface for sampling counts from various statistical distributions.
     Used to model cell population sizes, UMI capture rates, and PCR duplicate read counts.
     """
 

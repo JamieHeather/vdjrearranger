@@ -1,6 +1,9 @@
 # `vdjrearranger`
 #### Jamie Heather | 2026
 
+[![PyPI - Version](https://img.shields.io/pypi/v/vdjrearranger)](https://pypi.org/project/vdjrearranger/)
+[![License](https://img.shields.io/github/license/JamieHeather/vdjrearranger?label=license)](./LICENSE)
+
 `vdjrearranger` is a python tool to generate synthetic FASTQ sequence files in the format produced by the 10X V(D)J kit, for testing and validating different analyses involved in processing such data with `cellranger vdj` - particularly the testing of different germline reference sets.
 
 It takes a TSV of paired chain clonotypes, containing at least three columns specifying the name of each clonotype, and the complete nucleotide sequence of the complete, spliced transcript for each of the receptor chains (e.g. as produced by [`thimble` in the `stitchr` package](https://jamieheather.github.io/stitchr/)), and *rearranges* it to generate paired end FASTQs, mocking up what cells expressing those receptors should look like.
@@ -95,6 +98,8 @@ vdjrearranger \
 #### Parameter considerations
 
 * The basic default parameters try to ensure that all cells and clonotypes will be detected in the output of `cellranger vdj` when run on the FASTQ files produced, not necessarily that these simulated data best reflect true wet lab results.
+* This tool has been exclusively tested using `cellranger vdj` version 10.0.0, and other versions may have different expectations.
+  * Also note that this version requires >= 10,000 reads to detect chain and chemistry, with no option to specify the latter, so it's recommended to always use a set of parameters that will pass this threshold. (If in doubt, add more reads!)
 * It's not expected that every user will necessarily explore every parameter: they are merely provided in case it's useful in certain contexts, depending on their use case. 
 * Generally the larger the values and the more complexity involve, the longer `vdjrearranger` will take to run, and the larger the output files will become.
 * Curiously increasing the UMI and read count values doesn't always increase the likelihood of getting complete cell/clonotype detection.
@@ -110,6 +115,8 @@ Upon completion, the specified `--outdir` will contain:
 5. `run_command.txt`: The exact shell command executed to generate the run, for reproducibility purposes.
 
 ## Limitations
+
+This tool has largely been 
 
 Currently `vdjrearranger` doesn't:
 * Allow for cells expressing >2 recombined receptors
