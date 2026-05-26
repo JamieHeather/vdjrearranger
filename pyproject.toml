@@ -17,5 +17,5 @@ dependencies = [
 [project.scripts]
 vdjrearranger = "vdjrearranger.cli:app"
 
-[tool.setuptools.package-data]
-vdjrearranger = ["whitelist/*.txt.gz"]
+[tool.setuptools]
+include-package-data = true

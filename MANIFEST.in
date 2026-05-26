@@ -1,0 +1,2 @@
+recursive-include vdjrearranger/data *.txt.gz
+recursive-include vdjrearranger/data *.tsv
