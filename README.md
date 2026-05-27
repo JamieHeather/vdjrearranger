@@ -116,8 +116,6 @@ Upon completion, the specified `--outdir` will contain:
 
 ## Limitations
 
-This tool has largely been 
-
 Currently `vdjrearranger` doesn't:
 * Allow for cells expressing >2 recombined receptors
 * Generate any PCR or sequencing errors
